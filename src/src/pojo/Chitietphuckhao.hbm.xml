@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2020 2:02:40 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Chitietphuckhao" table="chitietphuckhao" catalog="quanlysv" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="monhoc" class="pojo.Monhoc" fetch="select">
+            <column name="Mon" not-null="true" />
+        </many-to-one>
+        <many-to-one name="phuckhao" class="pojo.Phuckhao" fetch="select">
+            <column name="MaPhucKhao" not-null="true" />
+        </many-to-one>
+        <property name="mssv" type="string">
+            <column name="MSSV" not-null="true" />
+        </property>
+        <property name="hoTen" type="string">
+            <column name="HoTen" not-null="true" />
+        </property>
+        <property name="cotDiem" type="string">
+            <column name="CotDiem" not-null="true" />
+        </property>
+        <property name="diemMongMuon" type="float">
+            <column name="DiemMongMuon" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="lyDo" type="string">
+            <column name="LyDo" not-null="true" />
+        </property>
+        <property name="trangThai" type="int">
+            <column name="TrangThai" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

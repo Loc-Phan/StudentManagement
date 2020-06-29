@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2020 2:02:40 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Lophoc" table="lophoc" catalog="quanlysv" optimistic-lock="version">
+        <id name="maLop" type="string">
+            <column name="MaLop" />
+            <generator class="assigned" />
+        </id>
+        <property name="tenLop" type="string">
+            <column name="TenLop" not-null="true" />
+        </property>
+        <property name="laLopHoc" type="int">
+            <column name="LaLopHoc" not-null="true" />
+        </property>
+        <set name="monhocs" table="monhoc" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Lop" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Monhoc" />
+        </set>
+        <set name="loptheomons" table="loptheomon" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Lop" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Loptheomon" />
+        </set>
+        <set name="sinhviens" table="sinhvien" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Lop" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Sinhvien" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2020 2:02:40 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Giaovien" table="giaovien" catalog="quanlysv" optimistic-lock="version">
+        <id name="maGv" type="int">
+            <column name="MaGV" />
+            <generator class="assigned" />
+        </id>
+        <property name="hoTen" type="string">
+            <column name="HoTen" not-null="true" />
+        </property>
+        <property name="tenDn" type="string">
+            <column name="TenDN" not-null="true" />
+        </property>
+        <property name="matKhau" type="string">
+            <column name="MatKhau" not-null="true" />
+        </property>
+        <property name="sdt" type="string">
+            <column name="SDT" />
+        </property>
+        <property name="diaChi" type="string">
+            <column name="DiaChi" />
+        </property>
+    </class>
+</hibernate-mapping>

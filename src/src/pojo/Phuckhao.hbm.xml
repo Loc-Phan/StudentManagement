@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2020 2:02:40 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Phuckhao" table="phuckhao" catalog="quanlysv" optimistic-lock="version">
+        <id name="maPhucKhao" type="int">
+            <column name="MaPhucKhao" />
+            <generator class="assigned" />
+        </id>
+        <property name="ngayBatDau" type="date">
+            <column name="NgayBatDau" length="10" not-null="true" />
+        </property>
+        <property name="ngayKetThuc" type="date">
+            <column name="NgayKetThuc" length="10" not-null="true" />
+        </property>
+        <set name="chitietphuckhaos" table="chitietphuckhao" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="MaPhucKhao" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Chitietphuckhao" />
+        </set>
+    </class>
+</hibernate-mapping>
